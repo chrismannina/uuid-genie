@@ -1,0 +1,10 @@
+certifi==2020.6.20
+click @ file:///C:/ci/click_1646056762388/work
+colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
+Flask @ file:///opt/conda/conda-bld/flask_1648041541647/work
+gunicorn==20.1.0
+itsdangerous @ file:///tmp/build/80754af9/itsdangerous_1621432558163/work
+Jinja2 @ file:///opt/conda/conda-bld/jinja2_1647436528585/work
+MarkupSafe @ file:///C:/ci_310/markupsafe_1642084045935/work
+Werkzeug @ file:///opt/conda/conda-bld/werkzeug_1645628268370/work
+wincertstore==0.2
