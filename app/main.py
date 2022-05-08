@@ -8,18 +8,27 @@ import app.uuid_generator as id
 app = Flask(__name__)
 
 # root page
-@app.route('/', methods=['GET'])
+@app.route('/')
 def root():
-    return 'Use GET /uuid to request a randomly generated UUID.'
+    return 'Use GET api/uuid/ to request a randomly generated UUID.'
 
-# GET request
-@app.route('/uuid/', methods=['GET'])
-def request_page():
+# GET request - single uuid (version 4)
+@app.route('/api/uuid/')
+def uuid():
     """UUID generated and returned as JSON object."""
-    uuid = id.generate_uuid()
-    data_set = {'UUID': f'{uuid}'}
-    json_uuid = json.dumps(data_set)
-    return json_uuid
+    data = {"uuid": f"{str(id.generate_uuid())}"}
+    uuid = json.dumps(data)
+    return uuid
+
+# GET request - multiple uuids (version 4)
+@app.route('/api/uuid/<number>')
+def uuid_number(number):
+    """Multiple UUIDs generated and returned as JSON object."""
+    data_dict = {}
+    for i in range(int(number)):
+        data_dict[f"uuid-{i+1}"] = str(id.generate_uuid())
+    uuids = json.dumps(data_dict)
+    return uuids
 
 
 if __name__ == '__main__':
