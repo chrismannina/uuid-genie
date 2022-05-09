@@ -30,7 +30,8 @@ pip install -r requirements.txt
 ```
 python wsgi.py
 ```
-- The service will be hosted on http://localhost:1337/
+- By default the service will be hosted on http://localhost:5000/
+- The port can be changed by editing ```wsgi.py``` to include the port you choose: ```app.run(port=1337)``` 
 - Press ctrl+c to end hosting
 
 #### *Heroku Deployment*
